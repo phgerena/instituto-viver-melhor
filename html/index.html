@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Instituto Viver Melhor</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Instituto Viver Melhor</h1>
+
+        <!-- Checkbox que controla o menu hambúrguer -->
+        <input type="checkbox" id="menu-toggle">
+
+        <label for="menu-toggle" class="menu-hamburguer">
+            ☰
+        </label>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="#" id="link-inicio">Início</a>
+                </li>
+
+                <li class="item-projetos">
+
+                    <!-- Checkbox que controla o submenu -->
+                    <input type="checkbox" id="submenu-toggle">
+
+                    <label for="submenu-toggle" class="submenu-botao">
+                        Projetos ▾
+                    </label>
+
+                    <ul class="submenu">
+                        <li>
+                           <a href="#" class="link-projetos">Voluntariado</a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="link-projetos">Doações</a>
+                        </li>
+                    </ul>
+
+                </li>
+
+                <li>
+                    <a href="#" id="link-cadastro">Cadastro</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="conteudo">
+
+        <section>
+            <h2>Sobre Nós</h2>
+
+            <p>
+                O Instituto Viver Melhor é uma organização dedicada a promover
+                qualidade de vida e novas oportunidades para a comunidade por
+                meio de projetos nas áreas de esportes, educação, meio ambiente
+                e alimentação. Nosso objetivo é contribuir para o desenvolvimento
+                social, incentivando a inclusão, o aprendizado, a sustentabilidade
+                e o acesso a uma alimentação de qualidade.
+            </p>
+
+            <picture>
+              <source srcset="../imagens/ong.png" type="image/png">
+              <img src="../imagens/ong.jpg"
+              alt="Voluntários reunidos durante uma ação comunitária do Instituto Viver Melhor">
+             </picture>
+        </section>
+
+        <section>
+            <h2>Contato</h2>
+
+            <p>Telefone: (14) 3842-4220</p>
+            <p>Email: institutoviverm@gmail.com</p>
+            <p>Endereço: Alameda das Papoulas, Número 351, Ilha Comprida - SP</p>
+        </section>
+
+    </main>
+
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
+ <script type="module" src="../js/script.js"></script>
+</body>
+</html>

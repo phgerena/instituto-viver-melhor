@@ -1,0 +1,428 @@
+:root {
+    --cor-primaria: #1D4E89;
+    --cor-primaria-clara: #4A7AB5;
+
+    --cor-secundaria: #2E7D32;
+    --cor-secundaria-clara: #66A96B;
+
+    --cor-branca: #FFFFFF;
+    --cor-fundo: #F5F7FA;
+    --cor-cinza: #D9DEE5;
+    --cor-texto: #202A35;
+
+    --fonte-pequena: 0.875rem;
+    --fonte-normal: 1rem;
+    --fonte-media: 1.25rem;
+    --fonte-grande: 1.75rem;
+    --fonte-muito-grande: 2.5rem;
+
+    --espacamento-xs: 0.5rem;
+    --espacamento-sm: 1rem;
+    --espacamento-md: 1.5rem;
+    --espacamento-lg: 2rem;
+    --espacamento-xl: 3rem;
+}
+
+
+/* =========================
+   ESTILOS GERAIS
+========================= */
+
+body {
+    margin: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-size: var(--fonte-normal);
+}
+
+h1 {
+    font-size: var(--fonte-muito-grande);
+}
+
+h2 {
+    font-size: var(--fonte-grande);
+    color: var(--cor-primaria);
+}
+
+h3 {
+    font-size: var(--fonte-media);
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--espacamento-md);
+}
+
+.projeto {
+    grid-column: span 12;
+    background-color: var(--cor-branca);
+    padding: var(--espacamento-lg);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.projeto:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: var(--espacamento-md);
+}
+
+
+/* =========================
+   MENU HAMBÚRGUER
+========================= */
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-hamburguer {
+    display: block;
+    cursor: pointer;
+    font-size: var(--fonte-grande);
+}
+
+
+/* Menu começa escondido no mobile */
+
+nav {
+    display: none;
+    width: 100%;
+    background-color: var(--cor-primaria);
+}
+
+
+/* Abre o menu quando o checkbox é marcado */
+
+#menu-toggle:checked ~ nav {
+    display: block;
+}
+
+
+/* Lista principal */
+
+nav > ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Links do menu */
+
+nav a {
+    display: block;
+    color: var(--cor-branca);
+    text-decoration: none;
+    padding: var(--espacamento-xs) var(--espacamento-sm);
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--cor-primaria-clara);
+}
+
+
+/* =========================
+   SUBMENU PROJETOS
+========================= */
+
+.item-projetos {
+    position: relative;
+}
+
+#submenu-toggle {
+    display: none;
+}
+
+.submenu-botao {
+    display: block;
+    color: var(--cor-branca);
+    padding: var(--espacamento-xs) var(--espacamento-sm);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submenu-botao:hover {
+    background-color: var(--cor-primaria-clara);
+}
+
+
+/* Submenu começa fechado */
+
+.submenu {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-primaria-clara);
+}
+
+
+/* Abre somente quando Projetos é clicado */
+
+#submenu-toggle:checked ~ .submenu {
+    display: block;
+}
+
+.submenu a {
+    padding-left: var(--espacamento-lg);
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-md);
+}
+
+form button {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    border: none;
+    padding: var(--espacamento-sm);
+    font-size: var(--fonte-normal);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background-color: var(--cor-primaria-clara);
+    transform: translateY(-2px);
+}
+
+form button:active {
+    transform: translateY(0);
+}
+
+form input:focus {
+    outline: none;
+    border: 2px solid var(--cor-primaria);
+    box-shadow: 0 0 5px rgba(29, 78, 137, 0.3);
+}
+
+form input:valid {
+    border: 2px solid var(--cor-secundaria);
+}
+
+form input:user-invalid {
+    border: 2px solid #C62828;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+/* Breakpoint 1 */
+
+@media (min-width: 576px) {
+
+    .container {
+        padding: var(--espacamento-sm);
+    }
+}
+
+
+/* Breakpoint 2 */
+
+@media (min-width: 768px) {
+
+    .projeto {
+        grid-column: span 6;
+    }
+
+    .menu-hamburguer {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        width: auto;
+        justify-content: center;
+    }
+
+    nav > ul {
+        flex-direction: row;
+        gap: var(--espacamento-md);
+    }
+
+    .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 140px;
+        background-color: var(--cor-primaria);
+    }
+
+    .submenu a {
+        padding: var(--espacamento-xs) var(--espacamento-sm);
+    }
+}
+
+
+/* Breakpoint 3 */
+
+@media (min-width: 992px) {
+
+    .container {
+        padding: var(--espacamento-md);
+    }
+}
+
+
+/* Breakpoint 4 */
+
+@media (min-width: 1200px) {
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+
+/* Breakpoint 5 */
+
+@media (min-width: 1400px) {
+
+    .container {
+        padding: var(--espacamento-lg);
+    }
+}
+
+.badge {
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branca);
+    padding: var(--espacamento-xs) var(--espacamento-sm);
+    border-radius: 20px;
+    font-size: var(--fonte-pequena);
+}
+
+.alerta {
+    grid-column: span 12;
+    background-color: var(--cor-secundaria-clara);
+    color: var(--cor-texto);
+    padding: var(--espacamento-sm);
+    border-left: 5px solid var(--cor-secundaria);
+    border-radius: 8px;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+#modal-toggle {
+    display: none;
+}
+
+.botao-modal {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    padding: var(--espacamento-xs) var(--espacamento-sm);
+    margin-top: var(--espacamento-sm);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botao-modal:hover {
+    background-color: var(--cor-primaria-clara);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#modal-toggle:checked ~ .modal {
+    display: flex;
+}
+
+.modal-conteudo {
+    background-color: var(--cor-branca);
+    padding: var(--espacamento-lg);
+    border-radius: 12px;
+    max-width: 500px;
+    width: 80%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.fechar-modal {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    padding: var(--espacamento-xs) var(--espacamento-sm);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.fechar-modal:hover {
+    background-color: var(--cor-primaria-clara);
+}
+
+#toast-toggle {
+    display: none;
+}
+
+.botao-toast {
+    grid-column: span 12;
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branca);
+    padding: var(--espacamento-sm);
+    border-radius: 8px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.toast {
+    display: none;
+    position: fixed;
+    right: var(--espacamento-md);
+    bottom: var(--espacamento-md);
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branca);
+    padding: var(--espacamento-sm) var(--espacamento-md);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+#toast-toggle:checked ~ .toast {
+    display: block;
+}
+

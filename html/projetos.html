@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Nossos Projetos</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Instituto Viver Melhor</h1>
+
+        <!-- Checkbox que controla o menu hambúrguer -->
+        <input type="checkbox" id="menu-toggle">
+
+        <label for="menu-toggle" class="menu-hamburguer">
+            ☰
+        </label>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Início</a>
+                </li>
+
+                <li class="item-projetos">
+
+                    <!-- Checkbox que controla o submenu -->
+                    <input type="checkbox" id="submenu-toggle">
+
+                    <label for="submenu-toggle" class="submenu-botao">
+                        Projetos ▾
+                    </label>
+
+                    <ul class="submenu">
+                        <li>
+                            <a href="projetos.html">Voluntariado</a>
+                        </li>
+
+                        <li>
+                            <a href="projetos.html">Doações</a>
+                        </li>
+                    </ul>
+
+                </li>
+
+                <li>
+                    <a href="cadastro.html">Cadastro</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="alerta">
+     <strong>Atenção:</strong> Estamos com inscrições abertas para novos voluntários.
+        </div>
+
+     <section class="projeto">
+        <h2>Voluntariado</h2>
+        <span class="badge">Voluntariado</span>
+
+        <p>Faça parte do Instituto Viver Melhor como voluntário e ajude a transformar vidas. Nossos colaboradores participam de ações esportivas, oficinas de educação, projetos ambientais e campanhas de distribuição de alimentos para famílias em situação de vulnerabilidade.</p>
+     
+        <h3>Como ser voluntário</h3>
+        <p>
+           Para participar, o interessado deve realizar seu cadastro no site e informar
+    suas áreas de interesse. Após o cadastro, nossa equipe entrará em contato
+    para apresentar as atividades disponíveis e orientar sobre como participar. 
+        </p>
+        <a href="cadastro.html">Quero ser voluntário</a>
+
+        <input type="checkbox" id="modal-toggle">
+
+<label for="modal-toggle" class="botao-modal">
+    Mais informações
+</label>
+
+<div class="modal">
+    <div class="modal-conteudo">
+
+        <h3>Voluntariado</h3>
+
+        <p>
+            Participe das ações do Instituto Viver Melhor e ajude
+            no desenvolvimento dos nossos projetos sociais.
+        </p>
+
+        <label for="modal-toggle" class="fechar-modal">
+            Fechar
+        </label>
+
+    </div>
+</div>
+    </section>
+
+
+     <section class="projeto">
+        <h2>Campanhas de Doação</h2>
+        <span class="badge">Doações</span>
+
+        <p>As campanhas de doação do Instituto Viver Melhor têm como objetivo arrecadar recursos para a manutenção dos projetos sociais da organização. As contribuições ajudam no desenvolvimento de atividades esportivas e educacionais, ações de preservação ambiental e distribuição de alimentos para famílias em situação de vulnerabilidade.</p>
+     
+        <h3>Como Contribuir</h3>
+        <p>
+         Para contribuir com o Instituto Viver Melhor, o interessado pode participar de nossas campanhas de arrecadação de alimentos, materiais escolares e recursos destinados à manutenção dos projetos. As doações recebidas são direcionadas às ações sociais desenvolvidas pela organização. 
+        </p>
+    </section>
+
+    <input type="checkbox" id="toast-toggle">
+
+<label for="toast-toggle" class="botao-toast">
+    Acompanhar projetos
+</label>
+
+<div class="toast">
+    ✓ Sucesso! Você receberá novidades sobre nossos projetos.
+</div>
+    </main>
+</body>
+</html>
