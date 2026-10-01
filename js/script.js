@@ -12,6 +12,43 @@ const linkInicio = document.getElementById("link-inicio");
 const linkCadastro = document.getElementById("link-cadastro");
 
 
+// =========================
+// SUBMENU PROJETOS
+// =========================
+
+const botaoSubmenu = document.getElementById("submenu-botao");
+const submenuProjetos = document.getElementById("submenu-projetos");
+
+botaoSubmenu.addEventListener("click", function() {
+
+    const aberto = submenuProjetos.classList.toggle("aberto");
+
+    botaoSubmenu.setAttribute("aria-expanded", aberto);
+});
+
+// =========================
+// MODO DE ALTO CONTRASTE
+// =========================
+
+const botaoContraste = document.getElementById("botao-contraste");
+
+botaoContraste.addEventListener("click", function() {
+
+    const ativado = document.body.classList.toggle("alto-contraste");
+
+    botaoContraste.setAttribute("aria-pressed", ativado);
+
+    if (ativado) {
+        botaoContraste.textContent = "Desativar alto contraste";
+    } else {
+        botaoContraste.textContent = "Alto contraste";
+    }
+});
+
+// =========================
+// TEMPLATE INÍCIO
+// =========================
+
 const templateInicio = `
     <section>
         <h2>Sobre Nós</h2>
@@ -26,7 +63,7 @@ const templateInicio = `
         </p>
 
         <picture>
-            <source srcset="../imagens/ong.png" type="image/png">
+            <source srcset="../imagens/ong.webp" type="image/webp">
             <img
                 src="../imagens/ong.jpg"
                 alt="Voluntários reunidos durante uma ação comunitária do Instituto Viver Melhor"
@@ -43,6 +80,10 @@ const templateInicio = `
     </section>
 `;
 
+
+// =========================
+// TEMPLATE CADASTRO
+// =========================
 
 const templateCadastro = `
     <form>
@@ -152,6 +193,10 @@ const templateCadastro = `
 `;
 
 
+// =========================
+// NAVEGAÇÃO - PROJETOS
+// =========================
+
 linksProjetos.forEach(function(link) {
 
     link.addEventListener("click", function(event) {
@@ -175,6 +220,10 @@ linksProjetos.forEach(function(link) {
 });
 
 
+// =========================
+// NAVEGAÇÃO - INÍCIO
+// =========================
+
 linkInicio.addEventListener("click", function(event) {
     event.preventDefault();
 
@@ -182,6 +231,10 @@ linkInicio.addEventListener("click", function(event) {
     conteudo.innerHTML = templateInicio;
 });
 
+
+// =========================
+// NAVEGAÇÃO - CADASTRO
+// =========================
 
 linkCadastro.addEventListener("click", function(event) {
     event.preventDefault();
