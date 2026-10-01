@@ -426,3 +426,9 @@ form input:user-invalid {
     display: block;
 }
 
+input:focus-visible,
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid #000;
+    outline-offset: 3px;
+}
