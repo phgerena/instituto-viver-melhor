@@ -1,6 +1,6 @@
 :root {
     --cor-primaria: #1D4E89;
-    --cor-primaria-clara: #4A7AB5;
+    --cor-primaria-clara: #416FA8;
 
     --cor-secundaria: #2E7D32;
     --cor-secundaria-clara: #66A96B;
@@ -71,6 +71,7 @@ h3 {
 .projeto:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
+
 
 /* =========================
    HEADER
@@ -150,13 +151,12 @@ nav a:hover {
     position: relative;
 }
 
-#submenu-toggle {
-    display: none;
-}
-
 .submenu-botao {
     display: block;
     color: var(--cor-branca);
+    background-color: transparent;
+    border: none;
+    font: inherit;
     padding: var(--espacamento-xs) var(--espacamento-sm);
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -178,9 +178,9 @@ nav a:hover {
 }
 
 
-/* Abre somente quando Projetos é clicado */
+/* Abre o submenu quando o JavaScript adiciona a classe "aberto" */
 
-#submenu-toggle:checked ~ .submenu {
+.submenu.aberto {
     display: block;
 }
 
@@ -232,6 +232,7 @@ form input:valid {
 form input:user-invalid {
     border: 2px solid #C62828;
 }
+
 
 /* =========================
    RESPONSIVIDADE
@@ -314,6 +315,11 @@ form input:user-invalid {
     }
 }
 
+
+/* =========================
+   COMPONENTES
+========================= */
+
 .badge {
     display: inline-block;
     background-color: var(--cor-secundaria);
@@ -331,6 +337,7 @@ form input:user-invalid {
     border-left: 5px solid var(--cor-secundaria);
     border-radius: 8px;
 }
+
 
 /* =========================
    MODAL
@@ -394,6 +401,11 @@ form input:user-invalid {
     background-color: var(--cor-primaria-clara);
 }
 
+
+/* =========================
+   TOAST
+========================= */
+
 #toast-toggle {
     display: none;
 }
@@ -426,9 +438,69 @@ form input:user-invalid {
     display: block;
 }
 
+
+/* =========================
+   ACESSIBILIDADE - FOCO
+========================= */
+
 input:focus-visible,
 button:focus-visible,
 a:focus-visible {
     outline: 3px solid #000;
     outline-offset: 3px;
+}
+
+/* =========================
+   MODO DE ALTO CONTRASTE
+========================= */
+
+body.alto-contraste {
+    --cor-primaria: #000000;
+    --cor-primaria-clara: #000000;
+    --cor-secundaria: #000000;
+    --cor-secundaria-clara: #FFFFFF;
+    --cor-branca: #FFFFFF;
+    --cor-fundo: #000000;
+    --cor-texto: #FFFFFF;
+}
+
+#botao-contraste {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    border: 2px solid var(--cor-branca);
+    padding: var(--espacamento-xs) var(--espacamento-sm);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: var(--fonte-normal);
+}
+
+/* Ajustes dos projetos no modo de alto contraste */
+
+body.alto-contraste .projeto {
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+}
+
+body.alto-contraste .projeto h2,
+body.alto-contraste .projeto h3,
+body.alto-contraste .projeto p {
+    color: #FFFFFF;
+}
+
+body.alto-contraste .projeto a {
+    color: #FFFFFF;
+}
+
+body.alto-contraste .projeto button {
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 2px solid #FFFFFF;
+}
+
+body.alto-contraste .alerta {
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    border-left: 5px solid #FFFFFF;
 }

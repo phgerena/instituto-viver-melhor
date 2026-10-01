@@ -12,6 +12,14 @@
     <header>
         <h1>Instituto Viver Melhor</h1>
 
+        <button
+         type="button"
+      id="botao-contraste"
+      aria-pressed="false"
+        >
+        Alto contraste
+       </button>
+
         <!-- Checkbox que controla o menu hambúrguer -->
         <input type="checkbox" id="menu-toggle">
 
@@ -27,16 +35,19 @@
 
                 <li class="item-projetos">
 
-                    <!-- Checkbox que controla o submenu -->
-                    <input type="checkbox" id="submenu-toggle">
-
-                    <label for="submenu-toggle" class="submenu-botao">
+                    <button
+                        type="button"
+                        id="submenu-botao"
+                        class="submenu-botao"
+                        aria-expanded="false"
+                        aria-controls="submenu-projetos"
+                    >
                         Projetos ▾
-                    </label>
+                    </button>
 
-                    <ul class="submenu">
+                    <ul class="submenu" id="submenu-projetos">
                         <li>
-                           <a href="#" class="link-projetos">Voluntariado</a>
+                            <a href="#" class="link-projetos">Voluntariado</a>
                         </li>
 
                         <li>
@@ -68,10 +79,13 @@
             </p>
 
             <picture>
-              <source srcset="../imagens/ong.png" type="image/png">
-              <img src="../imagens/ong.jpg"
-              alt="Voluntários reunidos durante uma ação comunitária do Instituto Viver Melhor">
-             </picture>
+                <source srcset="../imagens/ong.webp" type="image/webp">
+
+                <img
+                    src="../imagens/ong.jpg"
+                    alt="Voluntários reunidos durante uma ação comunitária do Instituto Viver Melhor"
+                >
+            </picture>
         </section>
 
         <section>
@@ -84,7 +98,13 @@
 
     </main>
 
- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
- <script type="module" src="../js/script.js"></script>
+    <footer>
+        <p>&copy; 2026 Instituto Viver Melhor</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../js/script.js"></script>
+
 </body>
+
 </html>
